@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modern Temp Mail</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create a temporary email address with instant inbox. Stay private and receive mail anonymously. View emails and attachments in a clean, modern UI.">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="app-container">
+  <header>
+    <h1>S-Temp Mail 📨</h1>
+    <p class="site-description">
+      Create a disposable email address instantly. Receive emails, view attachments, and stay anonymous — all in a clean, modern interface.
+    </p>
+    <div class="email-section">
+      <input type="text" id="emailInput" readonly />
+      <button class="btn" id="copyBtn">📋 Copy</button>
+    </div>
+    <div class="button-group">
+      <button class="btn" id="refreshBtn">🔄 Refresh</button>
+      <button class="btn" id="changeBtn">🔁 New Email</button>
+      <button class="btn danger" id="deleteBtn">🗑️ Delete</button>
+    </div>
+  </header>
+
+  <main>
+    <aside class="inbox">
+      <h2>Inbox</h2>
+      <p class="info-msg">🔄 Inbox auto-refreshes every 30 seconds</p>
+      <ul id="emailsList"></ul>
+    </aside>
+  </main>
+
+  <!-- Modal Viewer -->
+  <div class="modal-overlay hidden" id="emailViewer">
+    <div class="modal">
+      <div class="modal-header">
+        <button class="btn small" id="closeViewer">✖️ Close</button>
+      </div>
+      <div class="modal-content">
+        <p><strong>Sender:</strong> <span id="emailFrom"></span></p>
+        <p><strong>Subject:</strong> <span id="emailSubject"></span></p>
+        <div id="emailBody" class="body"></div>
+        <div id="attachmentSection"></div>
+      </div>
+    </div>
+  </div>
+  <!-- Notification Sound -->
+  <audio id="newMailSound" src="https://notificationsounds.com/storage/sounds/file-sounds-1151-pristine.mp3" preload="auto"></audio>
+</div>
+<script src="app.js"></script>
+<footer style="padding: 20px; background-color: #f9f9f9; text-align: center;">
+  <p style="font-size: 10px; color: #888; max-width: 800px; margin: 0 auto;">
+    Disclaimer: This website provides access to a temporary email service powered by a third-party API. It is intended for general-purpose testing, development, or privacy-conscious browsing where a disposable email is required. The temporary email addresses generated here are not owned or controlled by this site, and no emails are stored or processed by the site owner directly. All backend operations, including email handling and message delivery, are managed by the underlying API service.<br><br>
+    By using this service, you acknowledge that you understand its purpose and limitations. This tool is not meant to be used for any unlawful, harmful, or malicious activity, including but not limited to fraud, spam, impersonation, or any activity that violates the terms of service of other platforms. The developer of this website does not monitor user activity, log any personal information, or accept any liability for misuse of the service.<br><br>
+    Use at your own discretion. You are solely responsible for how you use this service and any consequences that result from that use.
+  </p>
+
+  <div style="margin-top: 15px;">
+    <span style="font-size: 12px; color: #555;"> Shivam Kumar | © 2025</span><br>
+    <a href="https://www.instagram.com/eclipticveil" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; text-decoration: none; color: #555; font-size: 12px; margin-top: 5px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 14px; height: 14px; margin-right: 6px;">
+      @eclipticveil
+    </a>
+  </div>
+</footer>
+</body>
+</html>
